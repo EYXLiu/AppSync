@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>Uses bluetooth to receive advertisements</string>
+    <string>Uses bluetooth to send advertisements</string>
 </dict>
 </plist>

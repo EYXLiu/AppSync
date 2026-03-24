@@ -7,62 +7,62 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		2EF1555C2F7206AA00ECF4CB /* PBXContainerItemProxy */ = {
+		2E84E4172F720D7000EC5D97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2EF155462F7206A700ECF4CB /* Project object */;
+			containerPortal = 2E84E4012F720D6E00EC5D97 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2EF1554D2F7206A700ECF4CB;
-			remoteInfo = AppSync_Receiver;
+			remoteGlobalIDString = 2E84E4082F720D6E00EC5D97;
+			remoteInfo = AppSync_Broadcaster;
 		};
-		2EF155662F7206AA00ECF4CB /* PBXContainerItemProxy */ = {
+		2E84E4212F720D7000EC5D97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2EF155462F7206A700ECF4CB /* Project object */;
+			containerPortal = 2E84E4012F720D6E00EC5D97 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2EF1554D2F7206A700ECF4CB;
-			remoteInfo = AppSync_Receiver;
+			remoteGlobalIDString = 2E84E4082F720D6E00EC5D97;
+			remoteInfo = AppSync_Broadcaster;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2EF1554E2F7206A700ECF4CB /* AppSync_Receiver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSync_Receiver.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EF1555B2F7206AA00ECF4CB /* AppSync_ReceiverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSync_ReceiverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2EF155652F7206AA00ECF4CB /* AppSync_ReceiverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSync_ReceiverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E84E4092F720D6E00EC5D97 /* AppSync_Broadcaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSync_Broadcaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E84E4162F720D7000EC5D97 /* AppSync_BroadcasterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSync_BroadcasterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E84E4202F720D7000EC5D97 /* AppSync_BroadcasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSync_BroadcasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2EF155502F7206A700ECF4CB /* AppSync_Receiver */ = {
+		2E84E40B2F720D6E00EC5D97 /* AppSync_Broadcaster */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AppSync_Receiver;
+			path = AppSync_Broadcaster;
 			sourceTree = "<group>";
 		};
-		2EF1555E2F7206AA00ECF4CB /* AppSync_ReceiverTests */ = {
+		2E84E4192F720D7000EC5D97 /* AppSync_BroadcasterTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AppSync_ReceiverTests;
+			path = AppSync_BroadcasterTests;
 			sourceTree = "<group>";
 		};
-		2EF155682F7206AA00ECF4CB /* AppSync_ReceiverUITests */ = {
+		2E84E4232F720D7000EC5D97 /* AppSync_BroadcasterUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AppSync_ReceiverUITests;
+			path = AppSync_BroadcasterUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2EF1554B2F7206A700ECF4CB /* Frameworks */ = {
+		2E84E4062F720D6E00EC5D97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2EF155582F7206AA00ECF4CB /* Frameworks */ = {
+		2E84E4132F720D7000EC5D97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2EF155622F7206AA00ECF4CB /* Frameworks */ = {
+		2E84E41D2F720D7000EC5D97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2EF155452F7206A700ECF4CB = {
+		2E84E4002F720D6E00EC5D97 = {
 			isa = PBXGroup;
 			children = (
-				2EF155502F7206A700ECF4CB /* AppSync_Receiver */,
-				2EF1555E2F7206AA00ECF4CB /* AppSync_ReceiverTests */,
-				2EF155682F7206AA00ECF4CB /* AppSync_ReceiverUITests */,
-				2EF1554F2F7206A700ECF4CB /* Products */,
+				2E84E40B2F720D6E00EC5D97 /* AppSync_Broadcaster */,
+				2E84E4192F720D7000EC5D97 /* AppSync_BroadcasterTests */,
+				2E84E4232F720D7000EC5D97 /* AppSync_BroadcasterUITests */,
+				2E84E40A2F720D6E00EC5D97 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2EF1554F2F7206A700ECF4CB /* Products */ = {
+		2E84E40A2F720D6E00EC5D97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2EF1554E2F7206A700ECF4CB /* AppSync_Receiver.app */,
-				2EF1555B2F7206AA00ECF4CB /* AppSync_ReceiverTests.xctest */,
-				2EF155652F7206AA00ECF4CB /* AppSync_ReceiverUITests.xctest */,
+				2E84E4092F720D6E00EC5D97 /* AppSync_Broadcaster.app */,
+				2E84E4162F720D7000EC5D97 /* AppSync_BroadcasterTests.xctest */,
+				2E84E4202F720D7000EC5D97 /* AppSync_BroadcasterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2EF1554D2F7206A700ECF4CB /* AppSync_Receiver */ = {
+		2E84E4082F720D6E00EC5D97 /* AppSync_Broadcaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2EF1556F2F7206AA00ECF4CB /* Build configuration list for PBXNativeTarget "AppSync_Receiver" */;
+			buildConfigurationList = 2E84E42A2F720D7000EC5D97 /* Build configuration list for PBXNativeTarget "AppSync_Broadcaster" */;
 			buildPhases = (
-				2EF1554A2F7206A700ECF4CB /* Sources */,
-				2EF1554B2F7206A700ECF4CB /* Frameworks */,
-				2EF1554C2F7206A700ECF4CB /* Resources */,
+				2E84E4052F720D6E00EC5D97 /* Sources */,
+				2E84E4062F720D6E00EC5D97 /* Frameworks */,
+				2E84E4072F720D6E00EC5D97 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2EF155502F7206A700ECF4CB /* AppSync_Receiver */,
+				2E84E40B2F720D6E00EC5D97 /* AppSync_Broadcaster */,
 			);
-			name = AppSync_Receiver;
+			name = AppSync_Broadcaster;
 			packageProductDependencies = (
 			);
-			productName = AppSync_Receiver;
-			productReference = 2EF1554E2F7206A700ECF4CB /* AppSync_Receiver.app */;
+			productName = AppSync_Broadcaster;
+			productReference = 2E84E4092F720D6E00EC5D97 /* AppSync_Broadcaster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2EF1555A2F7206AA00ECF4CB /* AppSync_ReceiverTests */ = {
+		2E84E4152F720D7000EC5D97 /* AppSync_BroadcasterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2EF155722F7206AA00ECF4CB /* Build configuration list for PBXNativeTarget "AppSync_ReceiverTests" */;
+			buildConfigurationList = 2E84E42D2F720D7000EC5D97 /* Build configuration list for PBXNativeTarget "AppSync_BroadcasterTests" */;
 			buildPhases = (
-				2EF155572F7206AA00ECF4CB /* Sources */,
-				2EF155582F7206AA00ECF4CB /* Frameworks */,
-				2EF155592F7206AA00ECF4CB /* Resources */,
+				2E84E4122F720D7000EC5D97 /* Sources */,
+				2E84E4132F720D7000EC5D97 /* Frameworks */,
+				2E84E4142F720D7000EC5D97 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2EF1555D2F7206AA00ECF4CB /* PBXTargetDependency */,
+				2E84E4182F720D7000EC5D97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2EF1555E2F7206AA00ECF4CB /* AppSync_ReceiverTests */,
+				2E84E4192F720D7000EC5D97 /* AppSync_BroadcasterTests */,
 			);
-			name = AppSync_ReceiverTests;
+			name = AppSync_BroadcasterTests;
 			packageProductDependencies = (
 			);
-			productName = AppSync_ReceiverTests;
-			productReference = 2EF1555B2F7206AA00ECF4CB /* AppSync_ReceiverTests.xctest */;
+			productName = AppSync_BroadcasterTests;
+			productReference = 2E84E4162F720D7000EC5D97 /* AppSync_BroadcasterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2EF155642F7206AA00ECF4CB /* AppSync_ReceiverUITests */ = {
+		2E84E41F2F720D7000EC5D97 /* AppSync_BroadcasterUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2EF155752F7206AA00ECF4CB /* Build configuration list for PBXNativeTarget "AppSync_ReceiverUITests" */;
+			buildConfigurationList = 2E84E4302F720D7000EC5D97 /* Build configuration list for PBXNativeTarget "AppSync_BroadcasterUITests" */;
 			buildPhases = (
-				2EF155612F7206AA00ECF4CB /* Sources */,
-				2EF155622F7206AA00ECF4CB /* Frameworks */,
-				2EF155632F7206AA00ECF4CB /* Resources */,
+				2E84E41C2F720D7000EC5D97 /* Sources */,
+				2E84E41D2F720D7000EC5D97 /* Frameworks */,
+				2E84E41E2F720D7000EC5D97 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2EF155672F7206AA00ECF4CB /* PBXTargetDependency */,
+				2E84E4222F720D7000EC5D97 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2EF155682F7206AA00ECF4CB /* AppSync_ReceiverUITests */,
+				2E84E4232F720D7000EC5D97 /* AppSync_BroadcasterUITests */,
 			);
-			name = AppSync_ReceiverUITests;
+			name = AppSync_BroadcasterUITests;
 			packageProductDependencies = (
 			);
-			productName = AppSync_ReceiverUITests;
-			productReference = 2EF155652F7206AA00ECF4CB /* AppSync_ReceiverUITests.xctest */;
+			productName = AppSync_BroadcasterUITests;
+			productReference = 2E84E4202F720D7000EC5D97 /* AppSync_BroadcasterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2EF155462F7206A700ECF4CB /* Project object */ = {
+		2E84E4012F720D6E00EC5D97 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					2EF1554D2F7206A700ECF4CB = {
+					2E84E4082F720D6E00EC5D97 = {
 						CreatedOnToolsVersion = 26.2;
 					};
-					2EF1555A2F7206AA00ECF4CB = {
+					2E84E4152F720D7000EC5D97 = {
 						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 2EF1554D2F7206A700ECF4CB;
+						TestTargetID = 2E84E4082F720D6E00EC5D97;
 					};
-					2EF155642F7206AA00ECF4CB = {
+					2E84E41F2F720D7000EC5D97 = {
 						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 2EF1554D2F7206A700ECF4CB;
+						TestTargetID = 2E84E4082F720D6E00EC5D97;
 					};
 				};
 			};
-			buildConfigurationList = 2EF155492F7206A700ECF4CB /* Build configuration list for PBXProject "AppSync_Receiver" */;
+			buildConfigurationList = 2E84E4042F720D6E00EC5D97 /* Build configuration list for PBXProject "AppSync_Broadcaster" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 2EF155452F7206A700ECF4CB;
+			mainGroup = 2E84E4002F720D6E00EC5D97;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 2EF1554F2F7206A700ECF4CB /* Products */;
+			productRefGroup = 2E84E40A2F720D6E00EC5D97 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2EF1554D2F7206A700ECF4CB /* AppSync_Receiver */,
-				2EF1555A2F7206AA00ECF4CB /* AppSync_ReceiverTests */,
-				2EF155642F7206AA00ECF4CB /* AppSync_ReceiverUITests */,
+				2E84E4082F720D6E00EC5D97 /* AppSync_Broadcaster */,
+				2E84E4152F720D7000EC5D97 /* AppSync_BroadcasterTests */,
+				2E84E41F2F720D7000EC5D97 /* AppSync_BroadcasterUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2EF1554C2F7206A700ECF4CB /* Resources */ = {
+		2E84E4072F720D6E00EC5D97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2EF155592F7206AA00ECF4CB /* Resources */ = {
+		2E84E4142F720D7000EC5D97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2EF155632F7206AA00ECF4CB /* Resources */ = {
+		2E84E41E2F720D7000EC5D97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2EF1554A2F7206A700ECF4CB /* Sources */ = {
+		2E84E4052F720D6E00EC5D97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2EF155572F7206AA00ECF4CB /* Sources */ = {
+		2E84E4122F720D7000EC5D97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2EF155612F7206AA00ECF4CB /* Sources */ = {
+		2E84E41C2F720D7000EC5D97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2EF1555D2F7206AA00ECF4CB /* PBXTargetDependency */ = {
+		2E84E4182F720D7000EC5D97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2EF1554D2F7206A700ECF4CB /* AppSync_Receiver */;
-			targetProxy = 2EF1555C2F7206AA00ECF4CB /* PBXContainerItemProxy */;
+			target = 2E84E4082F720D6E00EC5D97 /* AppSync_Broadcaster */;
+			targetProxy = 2E84E4172F720D7000EC5D97 /* PBXContainerItemProxy */;
 		};
-		2EF155672F7206AA00ECF4CB /* PBXTargetDependency */ = {
+		2E84E4222F720D7000EC5D97 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2EF1554D2F7206A700ECF4CB /* AppSync_Receiver */;
-			targetProxy = 2EF155662F7206AA00ECF4CB /* PBXContainerItemProxy */;
+			target = 2E84E4082F720D6E00EC5D97 /* AppSync_Broadcaster */;
+			targetProxy = 2E84E4212F720D7000EC5D97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2EF1556D2F7206AA00ECF4CB /* Debug */ = {
+		2E84E4282F720D7000EC5D97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,18 +321,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		2EF1556E2F7206AA00ECF4CB /* Release */ = {
+		2E84E4292F720D7000EC5D97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,204 +378,215 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		2EF155702F7206AA00ECF4CB /* Debug */ = {
+		2E84E42B2F720D7000EC5D97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(PROJECT_DIR)/AppSync-Receiver-Info.plist";
-				INFOPLIST_KEY_NSBluetoothWhileInUseUsageDescription = "Allows app to receive bluetooth";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/AppSync-Broadcaster-Info.plist";
+				INFOPLIST_KEY_NSBluetoothWhileInUseUsageDescription = "Allow bluetooth to send advertisments";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-Receiver";
+				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-Broadcaster";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		2EF155712F7206AA00ECF4CB /* Release */ = {
+		2E84E42C2F720D7000EC5D97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = YES;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(PROJECT_DIR)/AppSync-Receiver-Info.plist";
-				INFOPLIST_KEY_NSBluetoothWhileInUseUsageDescription = "Allows app to receive bluetooth";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_FILE = "$(PROJECT_DIR)/AppSync-Broadcaster-Info.plist";
+				INFOPLIST_KEY_NSBluetoothWhileInUseUsageDescription = "Allow bluetooth to send advertisments";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-Receiver";
+				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-Broadcaster";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		2EF155732F7206AA00ECF4CB /* Debug */ = {
+		2E84E42E2F720D7000EC5D97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-ReceiverTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-BroadcasterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppSync_Receiver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppSync_Receiver";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppSync_Broadcaster.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppSync_Broadcaster";
 			};
 			name = Debug;
 		};
-		2EF155742F7206AA00ECF4CB /* Release */ = {
+		2E84E42F2F720D7000EC5D97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-ReceiverTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-BroadcasterTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppSync_Receiver.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppSync_Receiver";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppSync_Broadcaster.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AppSync_Broadcaster";
 			};
 			name = Release;
 		};
-		2EF155762F7206AA00ECF4CB /* Debug */ = {
+		2E84E4312F720D7000EC5D97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-ReceiverUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-BroadcasterUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AppSync_Receiver;
+				TEST_TARGET_NAME = AppSync_Broadcaster;
 			};
 			name = Debug;
 		};
-		2EF155772F7206AA00ECF4CB /* Release */ = {
+		2E84E4322F720D7000EC5D97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-ReceiverUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "Froggo.AppSync-BroadcasterUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = AppSync_Receiver;
+				TEST_TARGET_NAME = AppSync_Broadcaster;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2EF155492F7206A700ECF4CB /* Build configuration list for PBXProject "AppSync_Receiver" */ = {
+		2E84E4042F720D6E00EC5D97 /* Build configuration list for PBXProject "AppSync_Broadcaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2EF1556D2F7206AA00ECF4CB /* Debug */,
-				2EF1556E2F7206AA00ECF4CB /* Release */,
+				2E84E4282F720D7000EC5D97 /* Debug */,
+				2E84E4292F720D7000EC5D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2EF1556F2F7206AA00ECF4CB /* Build configuration list for PBXNativeTarget "AppSync_Receiver" */ = {
+		2E84E42A2F720D7000EC5D97 /* Build configuration list for PBXNativeTarget "AppSync_Broadcaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2EF155702F7206AA00ECF4CB /* Debug */,
-				2EF155712F7206AA00ECF4CB /* Release */,
+				2E84E42B2F720D7000EC5D97 /* Debug */,
+				2E84E42C2F720D7000EC5D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2EF155722F7206AA00ECF4CB /* Build configuration list for PBXNativeTarget "AppSync_ReceiverTests" */ = {
+		2E84E42D2F720D7000EC5D97 /* Build configuration list for PBXNativeTarget "AppSync_BroadcasterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2EF155732F7206AA00ECF4CB /* Debug */,
-				2EF155742F7206AA00ECF4CB /* Release */,
+				2E84E42E2F720D7000EC5D97 /* Debug */,
+				2E84E42F2F720D7000EC5D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2EF155752F7206AA00ECF4CB /* Build configuration list for PBXNativeTarget "AppSync_ReceiverUITests" */ = {
+		2E84E4302F720D7000EC5D97 /* Build configuration list for PBXNativeTarget "AppSync_BroadcasterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2EF155762F7206AA00ECF4CB /* Debug */,
-				2EF155772F7206AA00ECF4CB /* Release */,
+				2E84E4312F720D7000EC5D97 /* Debug */,
+				2E84E4322F720D7000EC5D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2EF155462F7206A700ECF4CB /* Project object */;
+	rootObject = 2E84E4012F720D6E00EC5D97 /* Project object */;
 }
