@@ -1,0 +1,35 @@
+# AI-Generated gitignore 
+
+# ===============================
+# Xcode general
+# ===============================
+*.xcuserdata
+*.xcuserstate
+*.moved-aside
+xcshareddata/WorkspaceSettings.xcsettings
+
+# Build products & derived data
+build/
+DerivedData/
+
+# Xcode archives
+*.xcarchive
+*.ipa
+*.hmap
+*.crash
+
+# ===============================
+# Swift Package Manager
+# ===============================
+.build/
+Packages/
+.swiftpm/
+
+# ===============================
+# macOS system files
+# ===============================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Icon?
