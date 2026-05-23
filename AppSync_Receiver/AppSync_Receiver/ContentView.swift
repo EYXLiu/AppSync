@@ -15,6 +15,10 @@ struct ContentView: View {
         VStack {
             Text("BLE Receiver Test")
                 .font(.title)
+            
+            Text(receiver.message)
+                .font(.headline)
+                .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

@@ -9,7 +9,14 @@ import CoreBluetooth
 
 class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     var peripheralManager: CBPeripheralManager!
-    var sequence: UInt8 = 0
+    
+    let serviceUUID = CBUUID(string: "12345678-1234-1234-1234-123456789ABC")
+
+    let characteristicUUID = CBUUID(string: "87654321-4321-4321-4321-CBA987654321")
+    
+    var syncCharacteristic: CBMutableCharacteristic!
+    
+    var counter = 1
     
     override init() {
         super.init()
@@ -18,23 +25,42 @@ class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         if peripheral.state == .poweredOn {
-            startBroadcasting()
+            setupSync()
         }
     }
     
+    func setupSync() {
+        syncCharacteristic = CBMutableCharacteristic(
+            type: characteristicUUID,
+            properties: [.notify],
+            value: nil,
+            permissions: [.readable]
+        )
+        
+        let service = CBMutableService(type: serviceUUID, primary: true)
+        service.characteristics = [syncCharacteristic]
+        
+        peripheralManager.add(service)
+        peripheralManager.startAdvertising([
+            CBAdvertisementDataServiceUUIDsKey: [serviceUUID]
+        ])
+        
+        startBroadcasting()
+    }
+    
     func startBroadcasting() {
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { _ in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.sendPacket()
         }
     }
     
     func sendPacket() {
-        let serviceUUID = CBUUID(string: "12345678-1234-1234-1234-123456789ABC")
-        let advertisement: [String: Any] = [
-            CBAdvertisementDataServiceUUIDsKey: [serviceUUID]
-        ]
-
-        peripheralManager.stopAdvertising()
-        peripheralManager.startAdvertising(advertisement)
+        let value = "\(counter)"
+        
+        guard let data = value.data(using: .utf8) else { return }
+        
+        peripheralManager.updateValue(data, for: syncCharacteristic, onSubscribedCentrals: nil)
+        
+        counter = (counter % 5) + 1
     }
 }
