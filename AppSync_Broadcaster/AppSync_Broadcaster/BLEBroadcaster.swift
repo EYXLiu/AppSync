@@ -6,7 +6,6 @@
 //
 
 import CoreBluetooth
-import AppSync_Shared
 
 class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     var peripheralManager: CBPeripheralManager!

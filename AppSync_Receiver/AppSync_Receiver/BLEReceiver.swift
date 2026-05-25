@@ -8,7 +8,6 @@
 import CoreBluetooth
 import SwiftUI
 import Combine
-import AppSync_Shared
 
 class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var central: CBCentralManager!

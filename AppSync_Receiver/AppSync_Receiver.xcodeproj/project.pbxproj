@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		2EF7C7B92FC4C087002FDA78 /* AppSync_Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 2EF7C7B82FC4C087002FDA78 /* AppSync_Shared */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		2EF1555C2F7206AA00ECF4CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -56,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EF7C7B92FC4C087002FDA78 /* AppSync_Shared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +120,6 @@
 			);
 			name = AppSync_Receiver;
 			packageProductDependencies = (
-				2EF7C7B82FC4C087002FDA78 /* AppSync_Shared */,
 			);
 			productName = AppSync_Receiver;
 			productReference = 2EF1554E2F7206A700ECF4CB /* AppSync_Receiver.app */;
@@ -210,7 +204,6 @@
 			mainGroup = 2EF155452F7206A700ECF4CB;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2EC3A1862FC4C066000B5F93 /* XCLocalSwiftPackageReference "../AppSync_Shared" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2EF1554F2F7206A700ECF4CB /* Products */;
@@ -593,21 +586,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		2EC3A1862FC4C066000B5F93 /* XCLocalSwiftPackageReference "../AppSync_Shared" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../AppSync_Shared;
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2EF7C7B82FC4C087002FDA78 /* AppSync_Shared */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2EC3A1862FC4C066000B5F93 /* XCLocalSwiftPackageReference "../AppSync_Shared" */;
-			productName = AppSync_Shared;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2EF155462F7206A700ECF4CB /* Project object */;
 }
