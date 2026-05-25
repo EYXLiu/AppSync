@@ -72,12 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0E79BD2FC228D8004F8D32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2E84E4002F720D6E00EC5D97 = {
 			isa = PBXGroup;
 			children = (
 				2E84E40B2F720D6E00EC5D97 /* AppSync_Broadcaster */,
 				2E84E4192F720D7000EC5D97 /* AppSync_BroadcasterTests */,
 				2E84E4232F720D7000EC5D97 /* AppSync_BroadcasterUITests */,
+				2E0E79BD2FC228D8004F8D32 /* Frameworks */,
 				2E84E40A2F720D6E00EC5D97 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -195,6 +203,9 @@
 			);
 			mainGroup = 2E84E4002F720D6E00EC5D97;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2EF7C7C82FC4C0D5002FDA78 /* XCLocalSwiftPackageReference "../AppSync_Shared" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2E84E40A2F720D6E00EC5D97 /* Products */;
 			projectDirPath = "";
@@ -587,6 +598,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2EF7C7C82FC4C0D5002FDA78 /* XCLocalSwiftPackageReference "../AppSync_Shared" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../AppSync_Shared;
+		};
+/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 2E84E4012F720D6E00EC5D97 /* Project object */;
 }

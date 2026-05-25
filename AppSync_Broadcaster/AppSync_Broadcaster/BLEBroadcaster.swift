@@ -6,13 +6,14 @@
 //
 
 import CoreBluetooth
+import AppSync_Shared
 
 class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     var peripheralManager: CBPeripheralManager!
     
-    let serviceUUID = CBUUID(string: "12345678-1234-1234-1234-123456789ABC")
+    let serviceUUID = BLEUUIDs.service
 
-    let characteristicUUID = CBUUID(string: "87654321-4321-4321-4321-CBA987654321")
+    let characteristicUUID = BLEUUIDs.syncCharacteristic
     
     var syncCharacteristic: CBMutableCharacteristic!
     
@@ -32,9 +33,9 @@ class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     func setupSync() {
         syncCharacteristic = CBMutableCharacteristic(
             type: characteristicUUID,
-            properties: [.notify],
+            properties: [.notify, .read, .write],
             value: nil,
-            permissions: [.readable]
+            permissions: [.readable, .writeable]
         )
         
         let service = CBMutableService(type: serviceUUID, primary: true)
@@ -55,12 +56,30 @@ class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     }
     
     func sendPacket() {
-        let value = "\(counter)"
+        let packet = SyncPacket(sequence: UInt32(counter), timestamp: Date().timeIntervalSince1970)
         
-        guard let data = value.data(using: .utf8) else { return }
+        guard let data = try? JSONEncoder().encode(packet) else { return }
         
-        peripheralManager.updateValue(data, for: syncCharacteristic, onSubscribedCentrals: nil)
+        let success = peripheralManager.updateValue(
+            data,
+            for: syncCharacteristic,
+            onSubscribedCentrals: nil
+        )
+
+        if !success {
+            print("Queue full")
+        }
         
         counter = (counter % 5) + 1
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager,
+                           didReceiveWrite requests: [CBATTRequest]) {
+        
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager,
+                           didReceiveRead request: CBATTRequest) {
+        
     }
 }

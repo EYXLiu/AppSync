@@ -8,25 +8,28 @@
 import CoreBluetooth
 import SwiftUI
 import Combine
+import AppSync_Shared
 
 class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var central: CBCentralManager!
-    @Published var message: String = "Waiting..."
-    
     var peripheral: CBPeripheral?
+    
+    @Published var message: String = "Waiting..."
     
     override init() {
         super.init()
         central = CBCentralManager(delegate: self, queue: nil)
     }
     
+    // called when bluetooth turns on/off, checks if bluetooth is avaliable
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            let serviceUUID = CBUUID(string: "12345678-1234-1234-1234-123456789ABC")
+            let serviceUUID = BLEUUIDs.service
             central.scanForPeripherals(withServices: [serviceUUID])
         }
     }
     
+    // called when bluetooth device is discovered during scanning, connects and stops scanning
     func centralManager(_ central: CBCentralManager,
                         didDiscover peripheral: CBPeripheral,
                         advertisementData: [String : Any],
@@ -39,13 +42,15 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         central.connect(peripheral)
     }
     
+    // called after successfully connecting with a bluetooth device
     func centralManager(_ central: CBCentralManager,
                         didConnect peripheral: CBPeripheral) {
 
-        let serviceUUID = CBUUID(string: "12345678-1234-1234-1234-123456789ABC")
+        let serviceUUID = BLEUUIDs.service
         peripheral.discoverServices([serviceUUID])
     }
     
+    // called after services are discovered
     func peripheral(_ peripheral: CBPeripheral,
                     didDiscoverServices error: Error?) {
 
@@ -56,6 +61,7 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         }
     }
     
+    // called after characteristics are found
     func peripheral(_ peripheral: CBPeripheral,
                     didDiscoverCharacteristicsFor service: CBService,
                     error: Error?) {
@@ -67,18 +73,22 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         }
     }
     
+    // called when data is updated (main receive data function)
     func peripheral(_ peripheral: CBPeripheral,
                     didUpdateValueFor characteristic: CBCharacteristic,
                     error: Error?) {
 
         guard let data = characteristic.value,
-              let string = String(data: data, encoding: .utf8) else { return }
+              let packet = try? JSONDecoder().decode(
+                SyncPacket.self, from: data
+              ) else { return }
 
         DispatchQueue.main.async {
-            self.message = string
+            self.message = String(packet.timestamp)
         }
     }
     
+    // called when service itself is modified
     func peripheral(_ peripheral: CBPeripheral,
                     didModifyServices invalidatedServices: [CBService]) {
         // handle service change
