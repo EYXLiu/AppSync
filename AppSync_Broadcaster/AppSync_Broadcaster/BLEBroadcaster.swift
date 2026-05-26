@@ -55,7 +55,7 @@ class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     }
     
     func sendPacket() {
-        let packet = SyncPacket(sequence: UInt32(counter), timestamp: Date().timeIntervalSince1970)
+        let packet = SyncPacket(timestamp: Date().timeIntervalSince1970, event: 0)
         
         guard let data = try? JSONEncoder().encode(packet) else { return }
         
@@ -68,13 +68,22 @@ class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
         if !success {
             print("Queue full")
         }
-        
-        counter = (counter % 5) + 1
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager,
                            didReceiveWrite requests: [CBATTRequest]) {
-        
+        for request in requests {
+                guard let data = request.value else { continue }
+
+                do {
+                    let packet = try JSONDecoder().decode(SyncPacket.self, from: data)
+                    print(packet.timestamp)
+                } catch {
+                    print(error)
+                }
+
+                peripheralManager.respond(to: request, withResult: .success)
+            }
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager,

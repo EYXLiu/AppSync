@@ -12,6 +12,7 @@ import Combine
 class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var central: CBCentralManager!
     var peripheral: CBPeripheral?
+    var syncCharacteristic: CBCharacteristic?
     
     @Published var message: String = "Waiting..."
     
@@ -56,7 +57,7 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         guard let services = peripheral.services else { return }
 
         for service in services {
-            peripheral.discoverCharacteristics(nil, for: service)
+            peripheral.discoverCharacteristics([BLEUUIDs.syncCharacteristic], for: service)
         }
     }
     
@@ -68,6 +69,7 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         guard let characteristics = service.characteristics else { return }
 
         for characteristic in characteristics {
+            self.syncCharacteristic = characteristic
             peripheral.setNotifyValue(true, for: characteristic)
         }
     }
@@ -84,6 +86,7 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
 
         DispatchQueue.main.async {
             self.message = String(packet.timestamp)
+            self.sendPacket()
         }
     }
     
@@ -91,5 +94,20 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     func peripheral(_ peripheral: CBPeripheral,
                     didModifyServices invalidatedServices: [CBService]) {
         // handle service change
+    }
+    
+    func sendPacket() {
+        guard let peripheral = peripheral,
+              let characteristic = syncCharacteristic else { return }
+        
+        let packet = SyncPacket(timestamp: Date().timeIntervalSince1970, event: 0)
+        
+        guard let data = try? JSONEncoder().encode(packet) else { return }
+        
+        peripheral.writeValue(
+            data,
+            for: characteristic,
+            type: .withResponse
+        )
     }
 }

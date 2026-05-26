@@ -4,6 +4,7 @@
 //
 //  Created by Evan Liu on 2026-05-25.
 //
+// I WILL ADDRESS THIS IN THE FUTURE BUT THIS MIGHT BE AN XCODE LIMITATION THAT I CAN'T USE A CUSTOM LIBRARY IN TWO XCODE INSTANCES
 
 //
 // UUIDs.swift
@@ -23,11 +24,11 @@ public enum BLEUUIDs {
 //
 
 public struct SyncPacket: Codable {
-    public let sequence: UInt32
     public let timestamp: Double
+    public var event: UInt8
 
-    public init(sequence: UInt32, timestamp: Double) {
-        self.sequence = sequence
+    public init(timestamp: Double, event: UInt8) {
         self.timestamp = timestamp
+        self.event = event
     }
 }
