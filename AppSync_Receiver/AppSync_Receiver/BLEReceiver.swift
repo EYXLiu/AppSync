@@ -14,6 +14,9 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     var peripheral: CBPeripheral?
     var syncCharacteristic: CBCharacteristic?
     
+    let serviceUUID = BLEUUIDs.service
+    let characteristicUUID = BLEUUIDs.syncCharacteristic
+    
     @Published var message: String = "Waiting..."
     
     override init() {
@@ -24,7 +27,6 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     // called when bluetooth turns on/off, checks if bluetooth is avaliable
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn {
-            let serviceUUID = BLEUUIDs.service
             central.scanForPeripherals(withServices: [serviceUUID])
         }
     }
@@ -46,7 +48,6 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     func centralManager(_ central: CBCentralManager,
                         didConnect peripheral: CBPeripheral) {
 
-        let serviceUUID = BLEUUIDs.service
         peripheral.discoverServices([serviceUUID])
     }
     

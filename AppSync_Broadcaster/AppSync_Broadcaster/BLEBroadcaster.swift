@@ -9,14 +9,11 @@ import CoreBluetooth
 
 class BLEBroadcaster: NSObject, CBPeripheralManagerDelegate {
     var peripheralManager: CBPeripheralManager!
-    
-    let serviceUUID = BLEUUIDs.service
-
-    let characteristicUUID = BLEUUIDs.syncCharacteristic
-    
     var syncCharacteristic: CBMutableCharacteristic!
     
-    var counter = 1
+    let serviceUUID = BLEUUIDs.service
+    let characteristicUUID = BLEUUIDs.syncCharacteristic
+    
     
     override init() {
         super.init()
