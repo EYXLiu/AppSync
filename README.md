@@ -9,6 +9,8 @@ Built an iOS + macOS Bluetooth synchronization system using an NTP-inspired cloc
 - Coordinated visual flashes
 - File selection and local audio management using UIKit
 - MacOS central controller + iOS peripherals
+- Shared library for cross-platform logic between iOS and MacOS targets
 
 ## WIP
-- `DispatchQueue.main.AsyncAfter` is not accurate for timing, will need to find a better way of playing audio and sound  
+- `DispatchQueue.main.AsyncAfter` is not accurate for timing, will need to find a better way of playing audio and sound 
+- XCode workspace/shared library limitations when multiple XCode instances attempt to access the same shared module simultaneously
