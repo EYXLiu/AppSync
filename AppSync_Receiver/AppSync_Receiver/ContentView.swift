@@ -12,6 +12,13 @@ struct ContentView: View {
     @StateObject var receiver = BLEReceiver()
 
     var body: some View {
+        ZStack {
+            if receiver.flash {
+                Color.blue
+            } else {
+                Color.white
+            }
+        }
         VStack {
             Text("BLE Receiver Test")
                 .font(.title)
@@ -19,6 +26,9 @@ struct ContentView: View {
             Text(receiver.message)
                 .font(.headline)
                 .padding()
+            
+            Text("Offset: \(receiver.clock.offset)")
+            Text("RTT: \(receiver.clock.rtt)")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

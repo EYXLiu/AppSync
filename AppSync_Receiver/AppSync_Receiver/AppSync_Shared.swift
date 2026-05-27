@@ -23,12 +23,39 @@ public enum BLEUUIDs {
 // Packets.swift
 //
 
-public struct SyncPacket: Codable {
-    public let timestamp: Double
-    public var event: UInt8
+public enum PacketType: UInt8, Codable {
+    case syncRequest = 1 // requires sequence, t1
+    case syncResponse = 2 // requires sequence, t1, t2, t3
+    case scheduledEvent = 3 // requires event, timestamp
+}
 
-    public init(timestamp: Double, event: UInt8) {
-        self.timestamp = timestamp
+public struct Packet: Codable {
+    public let type: PacketType
+
+    public let sequence: UInt8?
+
+    public let t1: Double?
+    public let t2: Double?
+    public let t3: Double?
+
+    public let event: UInt8?
+    public let timestamp: Double?
+    
+    public init(type: PacketType, sequence: UInt8? = nil, t1: Double? = nil, t2: Double? = nil, t3: Double? = nil, event: UInt8? = nil, timestamp: Double? = nil) {
+        self.type = type
+        self.sequence = sequence
+        self.t1 = t1
+        self.t2 = t2
+        self.t3 = t3
         self.event = event
+        self.timestamp = timestamp
     }
+}
+
+//
+// Globals.swift
+//
+
+func getTimeNow() -> Double {
+    ProcessInfo.processInfo.systemUptime
 }

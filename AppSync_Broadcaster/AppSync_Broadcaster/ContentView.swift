@@ -11,8 +11,24 @@ struct ContentView: View {
     let BLE = BLEBroadcaster()
     
     var body: some View {
-        Text("BLE Broadcasting")
-            .padding()
+        VStack {
+            Text("BLE Broadcasting")
+                .padding()
+            
+            Button("Flash In 3 Seconds") {
+                let timestamp = getTimeNow() + 3.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    print("flash")
+                }
+                let packet = Packet(
+                    type: .scheduledEvent,
+                    event: 1,
+                    timestamp: timestamp
+                )
+                BLE.sendPacket(packet: packet)
+            }
+            .buttonStyle(.borderedProminent)
+        }
     }
 }
 

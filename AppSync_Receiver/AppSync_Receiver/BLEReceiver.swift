@@ -4,6 +4,7 @@
 //
 //  Created by Evan Liu on 2026-03-23.
 //
+//  peripheral
 
 import CoreBluetooth
 import SwiftUI
@@ -18,6 +19,10 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     let characteristicUUID = BLEUUIDs.syncCharacteristic
     
     @Published var message: String = "Waiting..."
+    @Published var clock: ClockModel = ClockModel(offset: 0, rtt: 0)
+    
+    var counter: UInt8 = 0
+    var flash = false
     
     override init() {
         super.init()
@@ -73,6 +78,10 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
             self.syncCharacteristic = characteristic
             peripheral.setNotifyValue(true, for: characteristic)
         }
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+            self.handleSyncRequest()
+        }
     }
     
     // called when data is updated (main receive data function)
@@ -82,12 +91,18 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
 
         guard let data = characteristic.value,
               let packet = try? JSONDecoder().decode(
-                SyncPacket.self, from: data
+                Packet.self, from: data
               ) else { return }
 
-        DispatchQueue.main.async {
-            self.message = String(packet.timestamp)
-            self.sendPacket()
+        switch packet.type {
+        case .syncRequest:
+            // shouldn't ever receive a sync request, should only send
+            print(packet)
+            break
+        case .syncResponse:
+            handleSyncResponse(packet: packet)
+        case .scheduledEvent:
+            handleScheduledEvent(packet: packet)
         }
     }
     
@@ -97,11 +112,56 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         // handle service change
     }
     
-    func sendPacket() {
+    // used to send a SyncRequest packet
+    func handleSyncRequest() {
+        let packet = Packet(type: .syncRequest, sequence: counter, t1: getTimeNow())
+        sendPacket(packet: packet)
+        counter = (counter + 1) % 5
+    }
+    
+    // what happens when a sync response is received
+    func handleSyncResponse(packet: Packet) {
+        let t4 = getTimeNow()
+        
+        guard let t1 = packet.t1,
+              let t2 = packet.t2,
+              let t3 = packet.t3 else { return }
+    
+        let newOffset = ((t2 - t1) + (t3 - t4)) / 2.0
+        let newRtt = (t4 - t1) - (t3 - t2)
+        
+        if clock.offset == 0 {
+            clock.offset = newOffset
+            clock.rtt = newRtt
+        }
+        if newRtt < clock.rtt || clock.rtt == 0 {
+            clock.offset = clock.offset * 0.8 + newOffset * 0.2
+            clock.rtt = newRtt
+        }
+    }
+    
+    // what happens when a scheduled event is received
+    func handleScheduledEvent(packet: Packet) {
+        guard let serverTime = packet.timestamp else { return }
+        let adjustedServerTime = serverTime + (clock.rtt / 2.0)
+        let now = getTimeNow()
+        let serverNow = now + clock.offset
+        let delay = adjustedServerTime - serverNow
+        if delay <= 0 { return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            switch packet.event {
+            case 1:
+                self.message = "Flashed"
+                self.flash = true
+            default:
+                return
+            }
+        }
+    }
+    
+    func sendPacket(packet: Packet) {
         guard let peripheral = peripheral,
               let characteristic = syncCharacteristic else { return }
-        
-        let packet = SyncPacket(timestamp: Date().timeIntervalSince1970, event: 0)
         
         guard let data = try? JSONEncoder().encode(packet) else { return }
         
