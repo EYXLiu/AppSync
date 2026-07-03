@@ -22,7 +22,9 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     @Published var clock: ClockModel = ClockModel(offset: 0, rtt: 0)
     
     var counter: UInt8 = 0
-    var flash = false
+    
+    let mp3Player = MP3Player()
+    let screenPlayer = ScreenPlayer()
     
     override init() {
         super.init()
@@ -148,14 +150,28 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         let serverNow = now + clock.offset
         let delay = adjustedServerTime - serverNow
         if delay <= 0 { return }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            switch packet.event {
-            case 1:
-                self.message = "Flashed"
-                self.flash = true
-            default:
-                return
+        switch packet.event {
+        case 1:
+            self.message = "flashed"
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.screenPlayer.play()
             }
+        case 2:
+            self.message = "playing"
+            guard let fileName = packet.fileName else { return }
+            self.mp3Player.update(named: fileName)
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                guard let offset = packet.offset else { return }
+                self.mp3Player.play(from: offset)
+            }
+        case 3:
+            self.message = "stopping"
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                self.mp3Player.stop()
+                self.mp3Player.clear()
+            }
+        default:
+            return
         }
     }
     

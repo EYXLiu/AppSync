@@ -13,7 +13,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            if receiver.flash {
+            if receiver.screenPlayer.flash {
                 Color.blue
             } else {
                 Color.white

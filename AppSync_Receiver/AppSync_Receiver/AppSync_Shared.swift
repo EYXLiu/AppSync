@@ -39,9 +39,12 @@ public struct Packet: Codable {
     public let t3: Double?
 
     public let event: UInt8?
-    public let timestamp: Double?
+    public let timestamp: Double? 
     
-    public init(type: PacketType, sequence: UInt8? = nil, t1: Double? = nil, t2: Double? = nil, t3: Double? = nil, event: UInt8? = nil, timestamp: Double? = nil) {
+    public let fileName: String?
+    public let offset: Double?
+    
+    public init(type: PacketType, sequence: UInt8? = nil, t1: Double? = nil, t2: Double? = nil, t3: Double? = nil, event: UInt8? = nil, timestamp: Double? = nil, filename: String? = nil, offset: Double? = nil) {
         self.type = type
         self.sequence = sequence
         self.t1 = t1
@@ -49,6 +52,8 @@ public struct Packet: Codable {
         self.t3 = t3
         self.event = event
         self.timestamp = timestamp
+        self.fileName = filename
+        self.offset = offset
     }
 }
 
