@@ -135,8 +135,7 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
         if clock.offset == 0 {
             clock.offset = newOffset
             clock.rtt = newRtt
-        }
-        if newRtt < clock.rtt || clock.rtt == 0 {
+        } else {
             clock.offset = clock.offset * 0.8 + newOffset * 0.2
             clock.rtt = newRtt
         }
