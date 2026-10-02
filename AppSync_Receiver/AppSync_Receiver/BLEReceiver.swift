@@ -145,7 +145,7 @@ class BLEReceiver: NSObject, ObservableObject, CBCentralManagerDelegate, CBPerip
     // what happens when a scheduled event is received
     func handleScheduledEvent(packet: Packet) {
         guard let serverTime = packet.timestamp else { return }
-        let adjustedServerTime = serverTime + (clock.rtt / 2.0)
+        let adjustedServerTime = serverTime + clock.offset
         let now = getTimeNow()
         let serverNow = now + clock.offset
         let delay = adjustedServerTime - serverNow
